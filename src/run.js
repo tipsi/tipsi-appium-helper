@@ -1,3 +1,4 @@
+import path from 'path'
 import findAndroidDevice from './core/find-android-device'
 import findiOSDevice from './core/find-ios-device'
 import appiumIsRunning from './core/appium-is-running'
@@ -37,6 +38,8 @@ export default async function run(config) {
       console.log('Config: appPath is not specified')
       return
     }
+    // Resolve APP file
+    config.appPath = path.resolve(config.appPath)
 
     // Check Device name and Platform version
     if (config.platformName === 'android') {

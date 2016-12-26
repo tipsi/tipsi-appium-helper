@@ -2,8 +2,7 @@
 
 require('babel-polyfill')
 require('babel-register')({
-  ignore: false,
-  only: /tipsi_appium\/src/,
+  ignore: /node_modules\/(?!tipsi_appium)/,
 })
 
 /* eslint no-var: 0 vars-on-top: 0 */
