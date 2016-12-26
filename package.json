@@ -40,6 +40,7 @@
     "jsonfile": "^2.4.0",
     "lodash": "^4.17.2",
     "node-simctl": "^3.4.4",
+    "require-dir-all": "^0.4.10",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.2",
     "tape-async": "^2.1.1",
