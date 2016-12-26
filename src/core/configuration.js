@@ -3,14 +3,17 @@ import defaults from 'lodash/defaults'
 
 const { env } = process
 
-const RC_FILE = '.testrc'
+const RC_FILE = env.RC_FILE || '.testrc'
 
-function readTestRC(filename) {
+function readTestRC(filename, platform) {
   if (!fs.existsSync(filename)) {
     return {}
   }
   try {
-    return JSON.parse(fs.readFileSync(filename))
+    const file = fs.readFileSync(filename)
+    const config = JSON.parse(file)
+    const platformConfig = config[platform] || {}
+    return { ...config, ...platformConfig }
   } catch (error) {
     throw new Error(`Unable to parse ${filename} file`)
   }
@@ -30,7 +33,7 @@ const environment = {
   appPath: env.APP_PATH,
   testsGlob: env.TESTS_GLOB,
   ignoreGlob: env.IGNORE_GLOB,
-  noReset: !!env.NO_RESET,
+  noReset: env.NO_RESET,
   automationName: env.AUTOMATION_NAME,
   imgur: env.IMGUR_CLIENT_ID,
   pastebin: env.PASTEBIN_DEV_KEY,
@@ -43,7 +46,7 @@ const predefined = {
   testsGlob: '__tests__/*_test_*.js',
 }
 
-const testrc = readTestRC(RC_FILE)
+const testrc = readTestRC(RC_FILE, environment.platformName)
 
 export default defaults(
   environment,
