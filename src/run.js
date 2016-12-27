@@ -2,10 +2,9 @@ import path from 'path'
 import findAndroidDevice from './core/find-android-device'
 import findiOSDevice from './core/find-ios-device'
 import appiumIsRunning from './core/appium-is-running'
+import allowedPlatforms from './constants/allowedPlatforms'
 import runTests from './runners'
 import helper from './helper'
-
-const allowedPlatformNames = ['ios', 'android']
 
 /* eslint no-console: 0 no-param-reassign: 0*/
 export default async function run(config) {
@@ -28,8 +27,8 @@ export default async function run(config) {
       console.log('Config: platformName is not specified')
       return
     }
-    if (!allowedPlatformNames.includes(config.platformName)) {
-      console.log(`Config: platformName should be one of: ${allowedPlatformNames}`)
+    if (!allowedPlatforms.includes(config.platformName)) {
+      console.log(`Config: platformName should be one of: ${allowedPlatforms}`)
       return
     }
 

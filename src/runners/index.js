@@ -4,7 +4,7 @@ export default function runTests(options) {
   if (options.runner === 'tape') {
     return runTapeTests({
       paths: [options.testsGlob],
-      ignore: options.ignoreGlob,
+      platform: options.platformName,
     })
   }
   throw new Error(`Runner for "${options.runner}" is not supported (supported runners: tape)`)
