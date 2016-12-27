@@ -1,16 +1,13 @@
 import { group } from 'tape-plus'
-import fs from 'fs'
-import path from 'path'
-import mockBin from 'mock-bin'
-import findiOSDevice from '../../src/core/find-ios-device'
+import mock from 'mock-require'
+import simctl from '../mock/simctl'
 
 group('find-ios-device', (test) => {
-  let unmock
+  let findiOSDevice
 
   test('setup', async () => {
-    const file = path.resolve('__tests__/mock/xcrun-simctl-list-devices.out')
-    const output = fs.readFileSync(file)
-    unmock = await mockBin('xcrun', 'node', `console.log(\`${output}\`)`)
+    mock('node-simctl', simctl)
+    findiOSDevice = require('../../src/core/find-ios-device').default
   })
 
   test('type', async (t) => {
@@ -68,6 +65,6 @@ group('find-ios-device', (test) => {
   })
 
   test('teardown', () => {
-    unmock()
+    mock.stop('adbkit')
   })
 })
