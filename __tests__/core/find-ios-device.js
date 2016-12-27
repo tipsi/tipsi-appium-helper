@@ -65,6 +65,6 @@ group('find-ios-device', (test) => {
   })
 
   test('teardown', () => {
-    mock.stop('adbkit')
+    mock.stop('node-simctl')
   })
 })
