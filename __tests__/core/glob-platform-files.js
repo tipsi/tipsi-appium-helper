@@ -12,6 +12,7 @@ group('glob-platform-files', (test) => {
       path.resolve(`${filesPath}/02_test_b.js`),
     ]
     const result = globPlatformFiles([glob], 'ios')
+
     t.same(
       result,
       expectedResult,
@@ -25,6 +26,7 @@ group('glob-platform-files', (test) => {
       path.resolve(`${filesPath}/02_test_b.js`),
     ]
     const result = globPlatformFiles([glob], 'android')
+
     t.same(
       result,
       expectedResult,
