@@ -7,6 +7,7 @@
     "appium-helper": "./bin/appium-helper.js"
   },
   "scripts": {
+    "test": "tape -r babel-register -r babel-polyfill __tests__/{**/,**/**/}*.js | tap-diff",
     "start": "babel-node ./src"
   },
   "repository": {
@@ -44,7 +45,6 @@
     "require-dir-all": "^0.4.10",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.2",
-    "tape-async": "^2.1.1",
     "webdriverio": "^4.2.16"
   },
   "devDependencies": {
@@ -53,6 +53,7 @@
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0"
+    "eslint-plugin-react": "^6.3.0",
+    "tape-plus": "^1.0.0"
   }
 }
