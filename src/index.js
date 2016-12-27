@@ -1,4 +1,4 @@
-import config from './core/configuration'
+import configure from './core/configuration'
 import run from './run'
 
-run(config)
+run(configure())

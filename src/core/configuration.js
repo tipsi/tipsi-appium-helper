@@ -3,8 +3,6 @@ import defaults from 'lodash/defaults'
 
 const { env } = process
 
-const RC_FILE = env.RC_FILE || '.testrc'
-
 function readTestRC(filename, platform) {
   if (!fs.existsSync(filename)) {
     return {}
@@ -37,6 +35,7 @@ const environment = {
   automationName: env.AUTOMATION_NAME,
   imgur: env.IMGUR_CLIENT_ID,
   pastebin: env.PASTEBIN_DEV_KEY,
+  rcFile: env.RC_FILE,
 }
 
 const predefined = {
@@ -44,12 +43,19 @@ const predefined = {
   appiumPort: '4723',
   runner: 'tape',
   testsGlob: '__tests__/*_test_*.js',
+  rcFile: '.testrc',
 }
 
-const testrc = readTestRC(RC_FILE, environment.platformName)
+export default function configure(options = {}) {
+  const testrc = readTestRC(
+    environment.rcFile || options.rcFile || predefined.rcFile,
+    environment.platformName || options.platformName
+  )
 
-export default defaults(
-  environment,
-  testrc,
-  predefined
-)
+  return defaults(
+    environment,
+    options,
+    testrc,
+    predefined
+  )
+}
