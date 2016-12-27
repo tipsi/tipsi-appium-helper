@@ -6,7 +6,7 @@ group('glob-platform-files', (test) => {
   const filesPath = '__tests__/mock/glob'
   const glob = path.resolve(`${filesPath}/*_test_*.js`)
 
-  test('ios', async (t) => {
+  test('ios', (t) => {
     const expectedResult = [
       path.resolve(`${filesPath}/01_test_a.ios.js`),
       path.resolve(`${filesPath}/02_test_b.js`),
@@ -19,7 +19,7 @@ group('glob-platform-files', (test) => {
     )
   })
 
-  test('android', async (t) => {
+  test('android', (t) => {
     const expectedResult = [
       path.resolve(`${filesPath}/01_test_a.android.js`),
       path.resolve(`${filesPath}/02_test_b.js`),
