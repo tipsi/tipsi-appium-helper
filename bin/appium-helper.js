@@ -47,7 +47,7 @@ run(config).catch((error) => {
   console.log('Error while executing tests:')
   console.log()
   console.log(error.message)
-  console.log()
+  console.log('-------------------------------------')
   console.log('Stack:')
   console.log()
   console.log(error.seleniumStack || error.stack)
