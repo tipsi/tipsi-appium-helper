@@ -45,7 +45,7 @@ const predefined = {
   appiumPort: '4723',
   runner: 'tape',
   testsGlob: '__tests__/*_test_*.js',
-  rcFile: '.testrc',
+  rcFile: '.appiumhelperrc',
 }
 
 export default function configure(options = {}) {
