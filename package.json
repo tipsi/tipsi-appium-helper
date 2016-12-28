@@ -1,5 +1,5 @@
 {
-  "name": "tipsi_appium",
+  "name": "tipsi-appium-helper",
   "version": "0.0.1",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",

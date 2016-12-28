@@ -16,5 +16,5 @@ export default {
   automationName: undefined,
   imgur: undefined,
   pastebin: undefined,
-  rcFile: '.testrc',
+  rcFile: '.appiumhelperrc',
 }
