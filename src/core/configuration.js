@@ -1,5 +1,6 @@
 import fs from 'fs'
 import defaults from 'lodash/defaults'
+import allowedPlatforms from '../constants/allowedPlatforms'
 
 const { env } = process
 
@@ -11,6 +12,7 @@ function readTestRC(filename, platform) {
     const file = fs.readFileSync(filename)
     const config = JSON.parse(file)
     const platformConfig = config[platform] || {}
+    allowedPlatforms.forEach((item) => { delete config[item] })
     return { ...config, ...platformConfig }
   } catch (error) {
     throw new Error(`Unable to parse ${filename} file`)
