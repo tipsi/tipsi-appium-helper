@@ -1,3 +1,3 @@
 export configure from './core/configuration'
-export helper from './helper'
+export default from './helper'
 export run from './run'
