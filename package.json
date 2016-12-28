@@ -7,7 +7,7 @@
     "appium-helper": "./bin/appium-helper.js"
   },
   "scripts": {
-    "test": "tape -r babel-register -r babel-polyfill __tests__/{**/,**/**/}*.js | tap-diff",
+    "test": "tape -r babel-register -r babel-polyfill __tests__/{/,**/,**/**/}*.js | tap-diff",
     "start": "babel-node ./src"
   },
   "repository": {

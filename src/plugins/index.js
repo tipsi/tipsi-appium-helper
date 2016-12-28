@@ -1,6 +1,6 @@
 import requireDirAll from 'require-dir-all'
 
-const plugins = requireDirAll('./plugins')
+const plugins = requireDirAll('./')
 
 function extend(helper = {}) {
   Object.keys(plugins).forEach((key) => {
