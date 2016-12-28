@@ -1,4 +1,3 @@
-import configure from './core/configuration'
-import run from './run'
-
-run(configure())
+export configure from './core/configuration'
+export helper from './helper'
+export run from './run'

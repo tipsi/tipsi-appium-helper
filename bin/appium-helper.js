@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* eslint no-var: 0 vars-on-top: 0 */
+/* eslint no-console: 0, no-var: 0, vars-on-top: 0 */
 var pkg = require('../package.json')
 var program = require('commander')
 
@@ -9,8 +9,10 @@ program
   .option('-p, --platform [type]', 'Platform name')
   .option('-g, --glob [path]', 'glob path for tests files')
   .option('-a, --app [path]', 'path to application file')
+  .option('-H, --appium-host', 'appium host')
+  .option('-P, --appium-port', 'appium port')
   .option('-D, --device-name', 'device name')
-  .option('-P, --platform-version', 'platform version')
+  .option('-V, --platform-version', 'platform version')
   .option('-A, --automation-name', 'automation name')
   .option('-N, --no-reset', 'no reset')
   .option('-r, --rcfile [name]', 'rc file name (default .testrc)')
@@ -18,13 +20,16 @@ program
 
 require('babel-polyfill')
 require('babel-register')({
-  ignore: /node_modules\/(?!tipsi_appium)/,
+  ignore: /node_modules\/(?!tipsi-appium-helper)/,
 })
 
 var configire = require('../src/core/configuration').default
+var helper = require('../src/helper').default
 var run = require('../src/run').default
 
-const options = {
+var options = {
+  appiumHost: program.appiumHost,
+  appiumPort: program.appiumPort,
   testsGlob: program.glob,
   appPath: program.app,
   platformName: program.platform,
@@ -35,6 +40,23 @@ const options = {
   rcFile: program.rcfile,
 }
 
-const config = configire(options)
+var config = configire(options)
 
-run(config)
+run(config).catch((error) => {
+  console.log('-------------------------------------')
+  console.log('Error while executing tests:')
+  console.log()
+  console.log(error.message)
+  console.log()
+  console.log('Stack:')
+  console.log()
+  console.log(error.seleniumStack || error.stack)
+  console.log('-------------------------------------')
+  // Close Helper and exit with error code
+  helper.release().then(() => process.exit(1))
+})
+
+process.on('SIGINT', () => {
+  // Close Helper and exit withot error code
+  helper.release().then(() => process.exit())
+})
