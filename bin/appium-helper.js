@@ -3,6 +3,7 @@
 /* eslint no-console: 0, no-var: 0, vars-on-top: 0 */
 var pkg = require('../package.json')
 var program = require('commander')
+var mockRequire = require('mock-require')
 
 program
   .version(pkg.version)
@@ -22,6 +23,9 @@ require('babel-polyfill')
 require('babel-register')({
   ignore: /node_modules\/(?!tipsi-appium-helper)/,
 })
+
+mockRequire('tipsi-appium-helper', require('..'))
+mockRequire('tape', require('tape'))
 
 var configire = require('../src/core/configuration').default
 var helper = require('../src/helper').default
