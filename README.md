@@ -56,7 +56,6 @@ Options:
 
    ```json
    {
-     ...
      "scripts": {
        "test": "appium-helper --platform ios --glob ./__tests__/*_test_*.js --app ./example.app"
      }
@@ -82,7 +81,6 @@ If you want to specify an ID of android emulator you should use `--device-name` 
 ```json
 // package.json
 {
-  ...
   "scripts": {
     "test": "appium-helper --platform android --device-name emulator-5554"
   }
@@ -98,7 +96,6 @@ If you want to specify an iOS version of Simulator you should pass `--platform-v
 ```sh
 // package.json
 {
-  ...
   "scripts": {
     "test:ios": "appium-helper --platform ios --device-name 'iPhone 7 Plus' --platform-version '10.1'"
   }
