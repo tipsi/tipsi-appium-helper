@@ -104,7 +104,7 @@ If you want to specify an iOS version of Simulator you should pass `--platform-v
 
 ### .appiumhelperrc
 
-You can keep some config in `.appiumhelperrc` by default. 
+You can keep some config in `.appiumhelperrc` by default.
 
 ```json
 {
@@ -141,6 +141,10 @@ Coming soon…
 ### Demo
 
 ![appium_helper](https://cloud.githubusercontent.com/assets/1788245/21549249/fe10587c-ce01-11e6-8327-42e467efb65d.gif)
+
+### Tests
+
+To run unit tests you can use `npm test` command.
 
 ### License
 
