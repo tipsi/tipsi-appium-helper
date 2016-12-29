@@ -34,13 +34,12 @@ export default async function run(config) {
   if (config.platformName === 'android') {
     config.deviceName = config.androidDeviceName || config.deviceName
     config.platformVersion = config.androidPlatformVersion || config.platformVersion
-    const deviceNotSpecified = !config.deviceName || !config.platformVersion
-    if (deviceNotSpecified) {
-      const device = await findAndroidDevice()
-      console.log(`Found next Android device: ${device.type} (${device.id}), version: ${device.version}`)
-      config.deviceName = device.id
-      config.platformVersion = device.version
-    }
+    const device = await findAndroidDevice(
+      !config.platformVersion && config.deviceName
+    )
+    console.log(`Found next Android device: ${device.type} (${device.id}), version: ${device.version}`)
+    config.deviceName = device.id
+    config.platformVersion = device.version
   }
   if (config.platformName === 'ios') {
     const device = await findiOSDevice(

@@ -2,11 +2,27 @@ import adb from 'adbkit'
 
 const client = adb.createClient()
 
-export default async function findAndroidDevice() {
+async function getDeviceInfo(id) {
+  try {
+    const props = await client.getProperties(id)
+    return {
+      id,
+      type: props['ro.product.model'],
+      version: props['ro.build.version.release'],
+    }
+  } catch (error) {
+    throw new Error(`Can not find android device with id: ${id}: ${error}`)
+  }
+}
+
+export default async function findAndroidDevice(id) {
   try {
     const devices = await client.listDevices()
     if (!devices.length) {
-      throw new Error('Device list is empty')
+      throw new Error('Devices list is empty')
+    }
+    if (id) {
+      return getDeviceInfo(id)
     }
     // Get first android device
     const device = devices[0]

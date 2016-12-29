@@ -6,16 +6,16 @@ var program = require('commander')
 
 program
   .version(pkg.version)
-  .option('-p, --platform [type]', 'Platform name')
+  .option('-p, --platform [type]', 'platform name')
   .option('-g, --glob [path]', 'glob path for tests files')
   .option('-a, --app [path]', 'path to application file')
-  .option('-H, --appium-host', 'appium host')
-  .option('-P, --appium-port', 'appium port')
-  .option('-D, --device-name', 'device name')
-  .option('-V, --platform-version', 'platform version')
-  .option('-A, --automation-name', 'automation name')
+  .option('-H, --appium-host [host]', 'appium host')
+  .option('-P, --appium-port [port]', 'appium port')
+  .option('-D, --device-name [name]', 'device name')
+  .option('-V, --platform-version [version]', 'platform version')
+  .option('-A, --automation-name [name]', 'automation name')
   .option('-N, --no-reset', 'no reset')
-  .option('-r, --rcfile [name]', 'rc file name (default .appiumhelperrc)')
+  .option('-r, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
   .parse(process.argv)
 
 require('babel-polyfill')
@@ -37,7 +37,7 @@ var options = {
   platformVersion: program.platformVersion,
   automationName: program.automationName,
   noReset: program.noReset,
-  rcFile: program.rcfile,
+  rcFile: program.rcFile,
 }
 
 var config = configire(options)
