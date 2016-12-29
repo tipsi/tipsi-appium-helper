@@ -18,18 +18,18 @@ Usage: appium-helper [options]
 
 Options:
 
-    -h, --help              output usage information
-    -V, --version           output the version number
-    -p, --platform [type]   platform name
-    -g, --glob [path]       glob path for tests files
-    -a, --app [path]        path to application file
-    -H, --appium-host       appium host
-    -P, --appium-port       appium port
-    -D, --device-name       device name
-    -V, --platform-version  platform version
-    -A, --automation-name   automation name
-    -N, --no-reset          no reset
-    -r, --rc-file [path]    path to rc file (default .appiumhelperrc)
+  -h, --help                        output usage information
+  -V, --version                     output the version number
+  -p, --platform [type]             platform name
+  -g, --glob [path]                 glob path for tests files
+  -a, --app [path]                  path to application file
+  -H, --appium-host [host]          appium host
+  -P, --appium-port [port]          appium port
+  -D, --device-name [name]          device name
+  -V, --platform-version [version]  platform version
+  -A, --automation-name [name]      automation name
+  -N, --no-reset                    no reset
+  -r, --rc-file [path]              path to rc file (default .appiumhelperrc)
 ```
 
 ### Minimal setup
