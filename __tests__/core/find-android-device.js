@@ -13,7 +13,7 @@ group('find-android-device', (test) => {
   test('first', async (t) => {
     const expectedResult = {
       id: 'emulator-5554',
-      type: 'device',
+      type: 'Android SDK built for x86_64',
       version: '5.0.2',
     }
     const result = await findAndroidDevice()

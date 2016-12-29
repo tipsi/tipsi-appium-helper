@@ -15,7 +15,7 @@ program
   .option('-V, --platform-version', 'platform version')
   .option('-A, --automation-name', 'automation name')
   .option('-N, --no-reset', 'no reset')
-  .option('-r, --rcfile [name]', 'rc file name (default .testrc)')
+  .option('-r, --rcfile [name]', 'rc file name (default .appiumhelperrc)')
   .parse(process.argv)
 
 require('babel-polyfill')

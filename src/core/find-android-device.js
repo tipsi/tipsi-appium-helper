@@ -14,7 +14,7 @@ export default async function findAndroidDevice() {
     const props = await client.getProperties(device.id)
     return {
       id: device.id,
-      type: device.type,
+      type: props['ro.product.model'],
       version: props['ro.build.version.release'],
     }
   } catch (error) {

@@ -17,18 +17,15 @@ export default async function run(config) {
 
   // Check Platform Name
   if (!config.platformName) {
-    console.log('Config: platformName is not specified')
-    return
+    throw new Error('Config: platformName is not specified')
   }
   if (!allowedPlatforms.includes(config.platformName)) {
-    console.log(`Config: platformName should be one of: ${allowedPlatforms}`)
-    return
+    throw new Error(`Config: platformName should be one of: ${allowedPlatforms}`)
   }
 
   // Check APP file
   if (!config.appPath) {
-    console.log('Config: appPath is not specified')
-    return
+    throw new Error('Config: appPath is not specified')
   }
   // Resolve APP file
   config.appPath = path.resolve(config.appPath)
@@ -40,7 +37,7 @@ export default async function run(config) {
     const deviceNotSpecified = !config.deviceName || !config.platformVersion
     if (deviceNotSpecified) {
       const device = await findAndroidDevice()
-      console.log(`Found next Android device: ${device.id}, version: ${device.version}`)
+      console.log(`Found next Android device: ${device.type} (${device.id}), version: ${device.version}`)
       config.deviceName = device.id
       config.platformVersion = device.version
     }
@@ -50,17 +47,15 @@ export default async function run(config) {
       config.iOSDeviceName || config.deviceName,
       config.iOSPlatformVersion || config.platformVersion
     )
-    console.log(`Found next iOS device: ${device.type}, version: ${device.version}`)
+    console.log(`Found next iOS device: ${device.type} (${device.id}), version: ${device.version}`)
     config.deviceName = device.type
     config.platformVersion = device.version
   }
 
   // Initialize Helper
   await helper.init(config)
-
   // Run Tape tests
   await runTests(config)
-
   // Close Helper
   await helper.release()
 }
