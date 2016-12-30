@@ -52,7 +52,9 @@ var options = {
 
 var config = configire(options)
 
-register([config.register])
+if (config.register) {
+  register([config.register])
+}
 
 run(config).catch((error) => {
   console.log('-------------------------------------')
