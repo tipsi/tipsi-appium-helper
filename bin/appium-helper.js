@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Begin reading from stdin so the process does not exit.
-process.stdin.resume()
+// process.stdin.resume()
 
 /* eslint no-console: 0, no-var: 0, vars-on-top: 0 */
 var pkg = require('../package.json')
