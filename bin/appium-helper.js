@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// Begin reading from stdin so the process does not exit.
+process.stdin.resume()
+
 /* eslint no-console: 0, no-var: 0, vars-on-top: 0 */
 var pkg = require('../package.json')
 var program = require('commander')
@@ -16,7 +19,8 @@ program
   .option('-V, --platform-version [version]', 'platform version')
   .option('-A, --automation-name [name]', 'automation name')
   .option('-N, --no-reset', 'no reset')
-  .option('-r, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
+  .option('-R, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
+  .option('-r, --register [file...]', 'register')
   .parse(process.argv)
 
 require('babel-polyfill')
@@ -28,6 +32,7 @@ mockRequire('tipsi-appium-helper', require('..'))
 mockRequire('tape', require('tape'))
 
 var configire = require('../src/core/configuration').default
+var register = require('../src/core/register').default
 var helper = require('../src/helper').default
 var run = require('../src/run').default
 
@@ -42,9 +47,12 @@ var options = {
   automationName: program.automationName,
   noReset: program.noReset,
   rcFile: program.rcFile,
+  register: program.register,
 }
 
 var config = configire(options)
+
+register([config.register])
 
 run(config).catch((error) => {
   console.log('-------------------------------------')

@@ -38,6 +38,7 @@ const environment = {
   imgur: env.IMGUR_CLIENT_ID,
   pastebin: env.PASTEBIN_DEV_KEY,
   rcFile: env.RC_FILE,
+  register: env.REGISTER,
 }
 
 const predefined = {

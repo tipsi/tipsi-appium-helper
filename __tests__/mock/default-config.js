@@ -17,4 +17,5 @@ export default {
   imgur: undefined,
   pastebin: undefined,
   rcFile: '.appiumhelperrc',
+  register: undefined,
 }
