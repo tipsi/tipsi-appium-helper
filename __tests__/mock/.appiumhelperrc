@@ -1,0 +1,10 @@
+{
+  "appiumHost": "192.168.10.10",
+  "appiumPort": "9999",
+  "ios": {
+    "appPath": "./ios/application.app"
+  },
+  "android": {
+    "appPath": "./android/application.apk"
+  }
+}

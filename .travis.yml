@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "7"
+cache:
+  directories:
+    - $HOME/.nvm
+    - $HOME/.npm
+    - node_modules
+script:
+  - npm run test

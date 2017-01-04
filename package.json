@@ -1,0 +1,64 @@
+{
+  "name": "tipsi-appium-helper",
+  "version": "0.0.1",
+  "description": "Tipsi Appium Helper",
+  "main": "src/index.js",
+  "bin": {
+    "appium-helper": "./bin/appium-helper.js"
+  },
+  "scripts": {
+    "test": "tape -r babel-register -r babel-polyfill __tests__/{/,**/,**/**/}*.js | tap-diff",
+    "start": "babel-node ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tipsi/tipsi_appium.git"
+  },
+  "keywords": [
+    "appium",
+    "test",
+    "tests",
+    "helper",
+    "ios",
+    "android"
+  ],
+  "author": "Tipsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tipsi/tipsi_appium/issues"
+  },
+  "homepage": "https://github.com/tipsi/tipsi_appium#readme",
+  "dependencies": {
+    "adbkit": "^2.6.0",
+    "babel-cli": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "better-pastebin": "^0.2.1",
+    "commander": "^2.9.0",
+    "glob": "^7.1.0",
+    "imgur": "^0.1.7",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.2",
+    "mock-require": "^2.0.0",
+    "node-simctl": "^3.4.4",
+    "require-dir-all": "^0.4.10",
+    "resolve": "^1.2.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.2",
+    "webdriverio": "^4.2.16"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "clear-require": "^1.0.1",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "nock": "^9.0.2",
+    "pmock": "^0.2.3",
+    "tape-plus": "^1.0.0"
+  }
+}
