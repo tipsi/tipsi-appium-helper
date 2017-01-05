@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tipsi/tipsi_appium.git"
+    "url": "git+https://github.com/tipsi/tipsi-appium-helper.git"
   },
   "keywords": [
     "appium",
@@ -25,9 +25,9 @@
   "author": "Tipsi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tipsi/tipsi_appium/issues"
+    "url": "https://github.com/tipsi/tipsi-appium-helper/issues"
   },
-  "homepage": "https://github.com/tipsi/tipsi_appium#readme",
+  "homepage": "https://github.com/tipsi/tipsi-appium-helper#readme",
   "dependencies": {
     "adbkit": "^2.6.0",
     "babel-cli": "^6.16.0",
