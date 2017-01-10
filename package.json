@@ -45,6 +45,7 @@
     "node-simctl": "^3.4.4",
     "require-dir-all": "^0.4.10",
     "resolve": "^1.2.0",
+    "semver-compare": "^1.0.0",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.2",
     "webdriverio": "^4.2.16"
