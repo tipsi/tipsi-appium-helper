@@ -21,6 +21,7 @@ program
   .option('-N, --no-reset', 'no reset')
   .option('-R, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
   .option('-r, --register [file...]', 'register')
+  .option('--playground', 'playground')
   .parse(process.argv)
 
 require('babel-polyfill')
@@ -48,6 +49,7 @@ var options = {
   noReset: program.noReset,
   rcFile: program.rcFile,
   register: program.register,
+  runner: program.playground && 'playground',
 }
 
 var config = configire(options)
