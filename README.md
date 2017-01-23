@@ -64,6 +64,27 @@ Options:
 
    Internally `appium-helper` will check if Appium process is running. After that will check if iPhone Simulator is running, if not — will start default `iPhone 6` simulator with the `latest` avialable version of iOS.
 
+### Playground
+You can run `tipsi-appium-helprer` in playgraund mode. This mode allows you to send command to `appium` via repl using `javascript` language and provides access to `helper` and `driver` instances.
+
+To enter in this mode use `--playground` key:
+
+```bash
+appium-helper --platform ios --playground
+```
+
+Some useful special commands are supported by all repl:
+* `.clear` - resets the repl context to an empty object and clears any multi-line expression currently being input.
+* `.save` - save the current repl session to a file: `> .save ./file/to/save.js`
+* `.load` - load a file into the current repl session. `> .load ./file/to/load.js`
+Full commands list you can find [here](https://nodejs.org/api/repl.html#repl_commands_and_special_keys).
+
+Pressed `<ctrl>-C` twice to exit.
+
+#### Payground Example
+
+![playground](https://cloud.githubusercontent.com/assets/1177226/22211689/799da43c-e1c0-11e6-8e73-6151d8703610.gif)
+
 #### Differences in running tests for Android
 
 Before run tests for Android you should start Android Emulator or connect your real device to your workstation. After that just check connected device via:
