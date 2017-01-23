@@ -70,7 +70,7 @@ You can run `tipsi-appium-helprer` in playgraund mode. This mode allows you to s
 To enter in this mode use `--playground` key:
 
 ```bash
-appium-helper -- platform ios --playground
+appium-helper --platform ios --playground
 ```
 
 Some useful special commands are supported by all repl:
