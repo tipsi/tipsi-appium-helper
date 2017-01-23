@@ -77,7 +77,7 @@ Some useful special commands are supported by all repl:
 * `.clear` - resets the repl context to an empty object and clears any multi-line expression currently being input.
 * `.save` - save the current repl session to a file: `> .save ./file/to/save.js`
 * `.load` - load a file into the current repl session. `> .load ./file/to/load.js`
-Full caoomands list you can find [here](https://nodejs.org/api/repl.html#repl_commands_and_special_keys).
+Full commands list you can find [here](https://nodejs.org/api/repl.html#repl_commands_and_special_keys).
 
 Pressed `<ctrl>-C` twice to exit.
 
