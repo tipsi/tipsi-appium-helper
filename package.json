@@ -1,6 +1,6 @@
 {
   "name": "tipsi-appium-helper",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",
   "bin": {
