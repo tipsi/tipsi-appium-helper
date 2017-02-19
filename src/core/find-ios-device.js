@@ -1,9 +1,10 @@
 import { getDevices } from 'node-simctl'
+import versionSort from 'version-sort'
 
 export default async function findiOSDevice(type = 'iPhone 6', version) {
   const result = await getDevices()
 
-  const sdks = Object.keys(result)
+  const sdks = versionSort(Object.keys(result))
   const devices = sdks.reduce(
     (memo, sdk) => {
       const nextDevices = result[sdk].map(
