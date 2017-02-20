@@ -1,44 +1,4 @@
 const devices = {
-  '8.1': [{ // eslint-disable-line quote-props
-    name: 'iPhone 4s',
-    udid: 'EE2E9F08-7507-493D-A412-831169DC0E6C',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPhone 5',
-    udid: '01D4A739-E576-4716-89A0-1D8D2F616FB8',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPhone 5s',
-    udid: 'CCA15405-1BF2-4FE9-BA04-7F1731F8BC27',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPhone 6',
-    udid: '44282DB9-2FD5-4388-9899-3E897193D79F',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPhone 6 Plus',
-    udid: '782001DA-B562-4063-9C8D-0B076DB8C9AA',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPad 2',
-    udid: '129A7CE2-195F-4B40-94BF-6F53298D7501',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, {
-    name: 'iPad Retina',
-    udid: 'F0C3DC79-AE98-478D-AE5A-485AED2C7B5C',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }, { name: 'iPad Air',
-    udid: '2CF06B47-0765-44E3-B1FA-D54CD6BB5322',
-    state: 'Shutdown',
-    sdk: '8.1',
-  }],
   '10.2': [{ // eslint-disable-line quote-props
     name: 'iPhone 5',
     udid: '72C380C0-77BD-4E78-B5DF-010A46CEDA69',
@@ -129,6 +89,46 @@ const devices = {
     udid: 'C305142C-781B-4CC3-A98F-5178A09C50F4',
     state: 'Shutdown',
     sdk: '10.2',
+  }],
+  '8.1': [{ // eslint-disable-line quote-props
+    name: 'iPhone 4s',
+    udid: 'EE2E9F08-7507-493D-A412-831169DC0E6C',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPhone 5',
+    udid: '01D4A739-E576-4716-89A0-1D8D2F616FB8',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPhone 5s',
+    udid: 'CCA15405-1BF2-4FE9-BA04-7F1731F8BC27',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPhone 6',
+    udid: '44282DB9-2FD5-4388-9899-3E897193D79F',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPhone 6 Plus',
+    udid: '782001DA-B562-4063-9C8D-0B076DB8C9AA',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPad 2',
+    udid: '129A7CE2-195F-4B40-94BF-6F53298D7501',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, {
+    name: 'iPad Retina',
+    udid: 'F0C3DC79-AE98-478D-AE5A-485AED2C7B5C',
+    state: 'Shutdown',
+    sdk: '8.1',
+  }, { name: 'iPad Air',
+    udid: '2CF06B47-0765-44E3-B1FA-D54CD6BB5322',
+    state: 'Shutdown',
+    sdk: '8.1',
   }],
 }
 
