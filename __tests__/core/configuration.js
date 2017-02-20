@@ -11,6 +11,7 @@ group('configuration', (test) => {
   }
 
   test('default', (t) => {
+    const env = pmock.env({})
     const result = configure()
 
     t.deepLooseEqual(
@@ -18,6 +19,8 @@ group('configuration', (test) => {
       defaultConfig,
       'Result should contain default configuration'
     )
+
+    env.reset()
   })
 
   test('enviroment', (t) => {
@@ -52,6 +55,7 @@ group('configuration', (test) => {
       appPath: './app.apk',
       noReset: true,
     }
+    const env = pmock.env({})
     const expectedResult = {
       ...defaultConfig,
       ...optionsConfig,
@@ -63,9 +67,12 @@ group('configuration', (test) => {
       expectedResult,
       'Result should contain values from passed options'
     )
+
+    env.reset()
   })
 
   test('file', (t) => {
+    const env = pmock.env({})
     const pathToRCFile = path.resolve('__tests__/mock/.appiumhelperrc')
     const baseConfig = {
       ...defaultConfig,
@@ -102,6 +109,8 @@ group('configuration', (test) => {
       androidExpectedConfig,
       'Result should contain values from file and use Android specific values'
     )
+
+    env.reset()
   })
 
   test('priority', (t) => {
