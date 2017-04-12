@@ -34,9 +34,9 @@ const environment = {
   testsGlob: env.TESTS_GLOB,
   ignoreGlob: env.IGNORE_GLOB,
   noReset: env.NO_RESET,
+  fullReset: env.FULL_RESET,
   automationName: env.AUTOMATION_NAME,
   imgur: env.IMGUR_CLIENT_ID,
-  pastebin: env.PASTEBIN_DEV_KEY,
   rcFile: env.RC_FILE,
   register: env.REGISTER,
 }

@@ -19,6 +19,7 @@ program
   .option('-V, --platform-version [version]', 'platform version')
   .option('-A, --automation-name [name]', 'automation name')
   .option('-N, --no-reset', 'no reset')
+  .option('-F, --full-reset', 'full reset')
   .option('-R, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
   .option('-r, --register [file...]', 'register')
   .option('--playground', 'playground')
@@ -47,6 +48,7 @@ var options = {
   platformVersion: program.platformVersion,
   automationName: program.automationName,
   noReset: program.noReset,
+  fullReset: program.fullReset,
   rcFile: program.rcFile,
   register: program.register,
   runner: program.playground && 'playground',

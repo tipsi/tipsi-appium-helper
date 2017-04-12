@@ -21,6 +21,7 @@ class Helper {
         platformVersion: config.platformVersion,
         app: config.appPath,
         noReset: config.noReset,
+        fullReset: config.fullReset,
         automationName: config.automationName,
         newCommandTimeout: 60000,
       },
