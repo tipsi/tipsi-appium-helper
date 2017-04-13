@@ -13,9 +13,9 @@ export default {
   testsGlob: '__tests__/*_test_*.js',
   ignoreGlob: undefined,
   noReset: undefined,
+  fullReset: undefined,
   automationName: undefined,
   imgur: undefined,
-  pastebin: undefined,
   rcFile: '.appiumhelperrc',
   register: undefined,
 }
