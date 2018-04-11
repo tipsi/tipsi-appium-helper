@@ -1,29 +1,23 @@
-import quickGist from 'quick-gist'
+import path from 'path'
+import fs from 'fs'
 
 export default async function () {
   const content = await this.driver.getSource()
 
   return new Promise((resolve) => {
-    quickGist({
-      content,
-      description: `Appium source ${new Date()}`,
-      public: false,
-      enterpriseOnly: false,
-      fileExtension: 'xml',
-    }, (error, resp, data) => {
-      /* eslint-disable no-console */
+    const pathToLog = path.resolve(process.cwd(), 'appium_source.xml')
+    fs.writeFile(pathToLog, content, 'utf8', (error) => {
       if (error) {
         console.log('---------------------------------------------------')
-        console.log('Failed to save source:', error.message)
+        console.log('Failed to save source:', error)
         console.log('---------------------------------------------------')
-        resolve(null)
+        reject(error)
       } else {
         console.log('---------------------------------------------------')
-        console.log('SOURCE URL:', data.html_url)
+        console.log('SOURCE URL:', pathToLog)
         console.log('---------------------------------------------------')
-        resolve(data)
+        resolve()
       }
-      /* eslint-enable no-console */
     })
   })
 }
