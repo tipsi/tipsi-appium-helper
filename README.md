@@ -18,7 +18,6 @@ Usage: appium-helper [options]
 
 Options:
 
-  -h, --help                        output usage information
   -V, --version                     output the version number
   -p, --platform [type]             platform name
   -g, --glob [path]                 glob path for tests files
@@ -29,7 +28,11 @@ Options:
   -V, --platform-version [version]  platform version
   -A, --automation-name [name]      automation name
   -N, --no-reset                    no reset
-  -r, --rc-file [path]              path to rc file (default .appiumhelperrc)
+  -F, --full-reset                  full reset
+  -R, --rc-file [path]              path to rc file (default .appiumhelperrc)
+  -r, --register [file...]          register
+  --playground                      playground
+  -h, --help                        output usage information
 ```
 
 ### Minimal setup

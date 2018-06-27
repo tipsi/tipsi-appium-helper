@@ -28,6 +28,7 @@ program
 require('babel-polyfill')
 require('babel-register')({
   ignore: /node_modules\/(?!tipsi-appium-helper)/,
+  presets: ['env', 'stage-0'],
 })
 
 mockRequire('tipsi-appium-helper', require('..'))
