@@ -25,7 +25,6 @@ class Helper {
         automationName: config.automationName,
         newCommandTimeout: 60000,
       },
-      logLevel: 'debug',
       path: '/wd/hub',
       host: config.appiumHost,
       port: config.appiumPort,
