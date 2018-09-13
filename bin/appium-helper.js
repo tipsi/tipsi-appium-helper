@@ -4,9 +4,9 @@
 // process.stdin.resume()
 
 /* eslint no-console: 0, no-var: 0, vars-on-top: 0 */
-var pkg = require('../package.json')
 var program = require('commander')
 var mockRequire = require('mock-require')
+var pkg = require('../package.json')
 
 program
   .version(pkg.version)
@@ -25,10 +25,28 @@ program
   .option('--playground', 'playground')
   .parse(process.argv)
 
-require('babel-polyfill')
-require('babel-register')({
-  ignore: /node_modules\/(?!tipsi-appium-helper)/,
-  presets: ['env', 'stage-0'],
+require('@babel/polyfill')
+require('@babel/register')({
+  ignore: [/node_modules\/(?!tipsi-appium-helper)/],
+  presets: ['@babel/preset-env'],
+  plugins: [
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-do-expressions',
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/plugin-proposal-export-namespace-from',
+    '@babel/plugin-proposal-function-bind',
+    '@babel/plugin-proposal-function-sent',
+    '@babel/plugin-proposal-json-strings',
+    '@babel/plugin-proposal-logical-assignment-operators',
+    '@babel/plugin-proposal-nullish-coalescing-operator',
+    '@babel/plugin-proposal-numeric-separator',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-proposal-throw-expressions',
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-import-meta',
+  ],
 })
 
 mockRequire('tipsi-appium-helper', require('..'))

@@ -1,13 +1,13 @@
 {
   "name": "tipsi-appium-helper",
-  "version": "2.1.3",
+  "version": "3.0.0",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",
   "bin": {
     "appium-helper": "./bin/appium-helper.js"
   },
   "scripts": {
-    "test": "tape -r babel-register -r babel-polyfill __tests__/{/,**/,**/**/}*.js | tap-diff",
+    "test": "tape -r @babel/register -r @babel/polyfill __tests__/{/,**/,**/**/}*.js | tap-diff",
     "start": "babel-node ./src"
   },
   "repository": {
@@ -32,13 +32,29 @@
     "webdriverio": ">= 4.2 < 5.0"
   },
   "dependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/node": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/plugin-proposal-decorators": "7.0.0",
+    "@babel/plugin-proposal-do-expressions": "7.0.0",
+    "@babel/plugin-proposal-export-default-from": "7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "7.0.0",
+    "@babel/plugin-proposal-function-bind": "7.0.0",
+    "@babel/plugin-proposal-function-sent": "7.0.0",
+    "@babel/plugin-proposal-json-strings": "7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-syntax-import-meta": "7.0.0",
+    "@babel/plugin-transform-runtime": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "@babel/register": "7.0.0",
     "adbkit": "2.11.0",
     "await-repl": "1.0.2",
-    "babel-cli": "6.26.0",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.6.1",
-    "babel-preset-stage-0": "6.24.1",
-    "babel-register": "6.26.0",
     "commander": "2.15.1",
     "glob": "7.1.2",
     "imgur": "0.2.1",
@@ -52,10 +68,10 @@
     "tape": "4.9.0"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.2",
+    "babel-eslint": "8.2.6",
     "clear-require": "1.0.1",
-    "eslint": "4.19.1",
-    "eslint-config-tipsi": "2.0.3",
+    "eslint": "5.4.0",
+    "eslint-config-tipsi": "2.1.1",
     "nock": "9.2.5",
     "pmock": "0.2.3",
     "tape-plus": "1.0.0",
