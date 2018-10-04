@@ -1,6 +1,6 @@
 {
   "name": "tipsi-appium-helper",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",
   "bin": {
@@ -64,7 +64,7 @@
     "require-dir-all": "0.4.15",
     "resolve": "1.7.0",
     "semver-compare": "1.0.0",
-    "tap-diff": "0.1.1",
+    "tipsi-tap-diff": "1.0.0",
     "tape": "4.9.0"
   },
   "devDependencies": {
