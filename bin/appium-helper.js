@@ -20,6 +20,7 @@ program
   .option('-A, --automation-name [name]', 'automation name')
   .option('-N, --no-reset', 'no reset')
   .option('-F, --full-reset', 'full reset')
+  .option('-T, --tapeInit [path]', 'path to tape JS init file')
   .option('-R, --rc-file [path]', 'path to rc file (default .appiumhelperrc)')
   .option('-r, --register [file...]', 'register')
   .option('--playground', 'playground')
@@ -44,6 +45,7 @@ var options = {
   appiumPort: program.appiumPort,
   testsGlob: program.glob,
   appPath: program.app,
+  desiredCapabilities: program.desiredCapabilities,
   platformName: program.platform,
   deviceName: program.deviceName,
   platformVersion: program.platformVersion,
@@ -53,6 +55,7 @@ var options = {
   rcFile: program.rcFile,
   register: program.register,
   runner: program.playground && 'playground',
+  tapeInit: program.tapeInit,
 }
 
 var config = configire(options)

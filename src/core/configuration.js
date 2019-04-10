@@ -31,6 +31,7 @@ const environment = {
   androidDeviceName: env.ANDROID_DEVICE_NAME,
   androidPlatformVersion: env.ANDROID_PLATFORM_VERSION,
   appPath: env.APP_PATH,
+  desiredCapabilities: env.DESIRED_CAPABILITIES,
   testsGlob: env.TESTS_GLOB,
   ignoreGlob: env.IGNORE_GLOB,
   noReset: env.NO_RESET,
@@ -39,6 +40,7 @@ const environment = {
   imgur: env.IMGUR_CLIENT_ID,
   rcFile: env.RC_FILE,
   register: env.REGISTER,
+  tapeInit: env.TAPE_INIT,
 }
 
 const predefined = {

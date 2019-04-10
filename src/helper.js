@@ -24,6 +24,7 @@ class Helper {
         fullReset: config.fullReset,
         automationName: config.automationName,
         newCommandTimeout: 60000,
+        ...config.desiredCapabilities
       },
       path: '/wd/hub',
       host: config.appiumHost,

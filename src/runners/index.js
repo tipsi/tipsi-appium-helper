@@ -8,6 +8,14 @@ export default function runTests(options) {
     })
   }
   if (options.runner === 'tape') {
+    if (options.tapeInit) {
+      const tapeInit = require(options.tapeInit).default
+      return tapeInit({
+        paths: [options.testsGlob],
+        platform: options.platformName,
+      })
+    }
+
     return runTapeTests({
       paths: [options.testsGlob],
       platform: options.platformName,

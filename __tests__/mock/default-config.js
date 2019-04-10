@@ -10,6 +10,7 @@ export default {
   androidDeviceName: undefined,
   androidPlatformVersion: undefined,
   appPath: undefined,
+  desiredCapabilities: undefined,
   testsGlob: '__tests__/*_test_*.js',
   ignoreGlob: undefined,
   noReset: undefined,
@@ -18,4 +19,5 @@ export default {
   imgur: undefined,
   rcFile: '.appiumhelperrc',
   register: undefined,
+  tapeInit: undefined,
 }
