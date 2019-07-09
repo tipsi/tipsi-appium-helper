@@ -1,6 +1,6 @@
 {
   "name": "tipsi-appium-helper",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",
   "bin": {
@@ -44,7 +44,7 @@
     "imgur": "0.2.1",
     "lodash": "4.17.5",
     "mock-require": "3.0.2",
-    "node-simctl": "3.11.8",
+    "node-simctl": "5.0.2",
     "require-dir-all": "0.4.15",
     "resolve": "1.7.0",
     "semver-compare": "1.0.0",
