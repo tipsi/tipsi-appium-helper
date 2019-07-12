@@ -30,9 +30,17 @@ export default async function run(config) {
   // Resolve APP file
   config.appPath = path.resolve(config.appPath)
 
-  config.tapeInit = path.resolve(config.tapeInit)
-  config.register = path.resolve(config.register)
-  config.testsGlob = path.resolve(config.testsGlob)
+  if (config.tapeInit) {
+    config.tapeInit = path.resolve(config.tapeInit)
+  }
+
+  if (config.register) {
+    config.register = path.resolve(config.register)
+  }
+
+  if (config.testsGlob) {
+    config.testsGlob = path.resolve(config.testsGlob)
+  }
 
   // Check Device name and Platform version
   if (config.platformName === 'android') {
