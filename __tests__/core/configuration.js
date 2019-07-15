@@ -113,6 +113,31 @@ group('configuration', (test) => {
     env.reset()
   })
 
+  test('override webdriver config file', (t) => {
+    const enviromentConfig = {
+      driverConfig: '__tests__/mock/overrided-config.json',
+    }
+    const env = pmock.env({
+      DRIVER_CONFIG: enviromentConfig.driverConfig,
+    })
+
+    const config = configure()
+
+    t.same(
+      config.appiumHost,
+      '127.0.0.1',
+      'Host should be overridden'
+    )
+
+    t.same(
+      config.appiumPort,
+      5932,
+      'Port should be overridden'
+    )
+
+    env.reset()
+  })
+
   test('priority', (t) => {
     const enviromentConfig = {
       appiumHost: '1.1.1.1',

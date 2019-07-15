@@ -12,6 +12,7 @@ program
   .version(pkg.version)
   .option('-p, --platform [type]', 'platform name')
   .option('-g, --glob [path]', 'glob path for tests files')
+  .option('-d, --driver-config [path]', 'override default WebDriver config')
   .option('-a, --app [path]', 'path to application file')
   .option('-H, --appium-host [host]', 'appium host')
   .option('-P, --appium-port [port]', 'appium port')
@@ -46,6 +47,7 @@ var options = {
   testsGlob: program.glob,
   appPath: program.app,
   desiredCapabilities: program.desiredCapabilities,
+  driverConfig: program.driverConfig,
   platformName: program.platform,
   deviceName: program.deviceName,
   platformVersion: program.platformVersion,

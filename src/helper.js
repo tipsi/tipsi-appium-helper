@@ -1,4 +1,5 @@
 import { remote } from 'webdriverio'
+import merge from 'lodash/merge'
 import plugins from './plugins'
 
 class Helper {
@@ -13,8 +14,10 @@ class Helper {
     if (this.driver) {
       return
     }
+
     this.config = config
-    this.driver = remote({
+
+    const baseConfig = {
       desiredCapabilities: {
         deviceName: config.deviceName,
         platformName: config.platformName,
@@ -29,9 +32,13 @@ class Helper {
       path: '/wd/hub',
       host: config.appiumHost,
       port: config.appiumPort,
-      connectionRetryTimeout: 1200000, // 20 min
-    })
-    await this.driver.init()
+      connectionRetryTimeout: 1200000, // 20 min,
+    }
+
+    const driverConfig = merge(baseConfig, config.driverConfigurations)
+
+    this.driver = remote()
+    await this.driver.init(driverConfig)
   }
 
   release = async () => {

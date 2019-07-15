@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import defaults from 'lodash/defaults'
 import allowedPlatforms from '../constants/allowedPlatforms'
 
@@ -32,6 +33,7 @@ const environment = {
   androidPlatformVersion: env.ANDROID_PLATFORM_VERSION,
   appPath: env.APP_PATH,
   desiredCapabilities: env.DESIRED_CAPABILITIES,
+  driverConfig: env.DRIVER_CONFIG,
   testsGlob: env.TESTS_GLOB,
   ignoreGlob: env.IGNORE_GLOB,
   noReset: env.NO_RESET,
@@ -51,16 +53,38 @@ const predefined = {
   rcFile: '.appiumhelperrc',
 }
 
+export function webDriverConfig(configFilePath) {
+  if (configFilePath) {
+    const configPath = path.resolve(configFilePath)
+    if (!fs.existsSync(configPath)) {
+      throw new Error(`${configPath} file is not exist...`)
+    }
+
+    try {
+      const file = fs.readFileSync(configPath)
+      const config = JSON.parse(file)
+      return { ...config }
+    } catch (error) {
+      throw new Error(`Unable to parse ${filename} file`)
+    }
+  }
+
+  return {}
+}
+
 export default function configure(options = {}) {
   const testrc = readTestRC(
     environment.rcFile || options.rcFile || predefined.rcFile,
     environment.platformName || options.platformName
   )
 
+  const driverConfig = webDriverConfig(environment.driverConfig || options.driverConfig)
+
   return defaults(
     environment,
     options,
     testrc,
+    driverConfig,
     predefined
   )
 }
