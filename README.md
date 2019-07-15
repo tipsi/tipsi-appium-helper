@@ -21,6 +21,7 @@ Options:
   -V, --version                     output the version number
   -p, --platform [type]             platform name
   -g, --glob [path]                 glob path for tests files
+  -d, --driver-config [path]        override default WebDriver config
   -a, --app [path]                  path to application file
   -H, --appium-host [host]          appium host
   -P, --appium-port [port]          appium port

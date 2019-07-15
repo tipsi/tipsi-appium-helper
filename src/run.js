@@ -2,6 +2,7 @@ import path from 'path'
 import findAndroidDevice from './core/find-android-device'
 import findiOSDevice from './core/find-ios-device'
 import appiumIsRunning from './core/appium-is-running'
+import { webDriverConfig } from './core/configuration'
 import allowedPlatforms from './constants/allowedPlatforms'
 import runTests from './runners'
 import helper from './helper'
@@ -61,6 +62,10 @@ export default async function run(config) {
     console.log(`Found next iOS device: ${device.type} (${device.id}), version: ${device.version}`)
     config.deviceName = device.type
     config.platformVersion = device.version
+  }
+
+  if (config.driverConfig) {
+    config.driverConfigurations = webDriverConfig(config.driverConfig)
   }
 
   // Initialize Helper
