@@ -76,7 +76,7 @@ var options = {
   appiumPort: program.appiumPort,
   testsGlob: program.glob,
   appPath: program.app,
-  desiredCapabilities: program.desiredCapabilities,
+  capabilities: program.capabilities,
   driverConfig: program.driverConfig,
   platformName: program.platform,
   deviceName: program.deviceName,

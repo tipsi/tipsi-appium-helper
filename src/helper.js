@@ -18,7 +18,7 @@ class Helper {
     this.config = config
 
     const baseConfig = {
-      desiredCapabilities: {
+      capabilities: {
         deviceName: config.deviceName,
         platformName: config.platformName,
         platformVersion: config.platformVersion,
@@ -27,23 +27,21 @@ class Helper {
         fullReset: config.fullReset,
         automationName: config.automationName,
         newCommandTimeout: 60000,
-        ...config.desiredCapabilities
+        ...config.capabilities
       },
       path: '/wd/hub',
-      host: config.appiumHost,
-      port: config.appiumPort,
+      hostname: config.appiumHost,
+      port: +config.appiumPort,
       connectionRetryTimeout: 1200000, // 20 min,
     }
 
     const driverConfig = merge(baseConfig, config.driverConfigurations)
 
-    this.driver = remote()
-    await this.driver.init(driverConfig)
+    this.driver = remote(driverConfig)
   }
 
   release = async () => {
     if (this.driver) {
-      await this.driver.end()
       this.driver = null
       this.config = {}
     }
