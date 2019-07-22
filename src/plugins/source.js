@@ -1,11 +1,12 @@
 import path from 'path'
 import fs from 'fs'
+import date from 'date-and-time'
 
 export default async function () {
   const content = await this.driver.getSource()
 
   return new Promise((resolve) => {
-    const pathToLog = path.resolve(process.cwd(), 'appium_source.xml')
+    const pathToLog = path.resolve(process.cwd(), 'appium_source_'+date.format(new Date(), 'YYYYMMDD[T]HHmmss')+'.xml')
     fs.writeFile(pathToLog, content, 'utf8', (error) => {
       if (error) {
         console.log('---------------------------------------------------')
@@ -19,5 +20,6 @@ export default async function () {
         resolve()
       }
     })
+    return pathToLog
   })
 }
