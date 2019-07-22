@@ -66,7 +66,8 @@
     "resolve": "1.7.0",
     "semver-compare": "1.0.0",
     "tap-diff": "0.1.1",
-    "tape": "4.11.0"
+    "tape": "4.11.0",
+    "date-and-time": "0.8.1"
   },
   "devDependencies": {
     "@babel/node": "7.0.0",
