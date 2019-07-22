@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 
 export default async function () {
-  const content = await this.driver.getSource()
+  const content = await this.driver.getPageSource()
 
   return new Promise((resolve) => {
     const pathToLog = path.resolve(process.cwd(), 'appium_source.xml')

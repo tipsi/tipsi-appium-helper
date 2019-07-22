@@ -3,7 +3,7 @@ import imgur from 'imgur'
 export default async function () {
   imgur.setClientId(this.config.imgur)
 
-  const screenshot = await this.driver.saveScreenshot()
+  const screenshot = await this.driver.takeScreenshot()
 
   return imgur.uploadBase64(screenshot.toString('base64'))
     /* eslint-disable no-console */

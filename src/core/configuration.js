@@ -32,7 +32,7 @@ const environment = {
   androidDeviceName: env.ANDROID_DEVICE_NAME,
   androidPlatformVersion: env.ANDROID_PLATFORM_VERSION,
   appPath: env.APP_PATH,
-  desiredCapabilities: env.DESIRED_CAPABILITIES,
+  capabilities: env.CAPABILITIES,
   driverConfig: env.DRIVER_CONFIG,
   testsGlob: env.TESTS_GLOB,
   ignoreGlob: env.IGNORE_GLOB,

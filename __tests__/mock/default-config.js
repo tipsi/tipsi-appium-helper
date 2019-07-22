@@ -10,7 +10,7 @@ export default {
   androidDeviceName: undefined,
   androidPlatformVersion: undefined,
   appPath: undefined,
-  desiredCapabilities: undefined,
+  capabilities: undefined,
   driverConfig: undefined,
   testsGlob: '__tests__/*_test_*.js',
   ignoreGlob: undefined,

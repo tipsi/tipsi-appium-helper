@@ -1,6 +1,6 @@
 {
   "name": "tipsi-appium-helper",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Tipsi Appium Helper",
   "main": "src/index.js",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "tape -r @babel/register -r @babel/polyfill __tests__/{/,**/,**/**/}*.js | tap-diff",
-    "start": "@babel/node ./src"
+    "start": "babel-node ./src"
   },
   "repository": {
     "type": "git",
@@ -54,6 +54,8 @@
     "@babel/plugin-transform-runtime": "7.0.0",
     "@babel/preset-env": "7.0.0",
     "@babel/register": "7.0.0",
+    "@babel/node": "7.0.0",
+    "@wdio/selenium-standalone-service": "5.11.2",
     "adbkit": "2.11.0",
     "await-repl": "1.0.2",
     "commander": "2.15.1",
@@ -65,7 +67,7 @@
     "require-dir-all": "0.4.15",
     "resolve": "1.7.0",
     "semver-compare": "1.0.0",
-    "tap-diff": "0.1.1",
+    "tipsi-tap-diff": "1.0.0",
     "tape": "4.11.0"
   },
   "devDependencies": {
@@ -77,6 +79,6 @@
     "nock": "9.2.5",
     "pmock": "0.2.3",
     "tape-plus": "1.0.0",
-    "webdriverio": "4.2.16"
+    "webdriverio": "5.11.7"
   }
 }

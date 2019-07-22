@@ -37,7 +37,7 @@ export default async function skywalker(parent, child, callback, uniqHandler) {
   // const parentLocation = await this.driver.getLocationInView(parent)
 
   do {
-    const childrenIds = await this.driver.pause(5000).elements(child).then(({ value }) => value)
+    const childrenIds = await this.driver.pause(5000).findElements(child).then(({ value }) => value)
     const childrenLength = childrenIds.length
     const children = range(1, childrenLength + 1)
     const visibleChildren = []
@@ -65,8 +65,8 @@ export default async function skywalker(parent, child, callback, uniqHandler) {
     const parentItemId = visibleChildren[visibleChildren.length - 1]
 
     // Should be in future elementIdRect
-    const { value: { y } } = await this.driver.elementIdLocationInView(parentItemId)
-    const { value: { height } } = await this.driver.elementIdSize(parentItemId)
+    const { value: { y } } = await this.driver.getElementLocationInView(parentItemId)
+    const { value: { height } } = await this.driver.getElementSize(parentItemId)
     const currentLastVisibleChildId = await callback(parentItemId)
     endOfScreen = lastVisibleChildId === currentLastVisibleChildId
     lastVisibleChildId = currentLastVisibleChildId

@@ -12,12 +12,13 @@ export default async function hideKeyboard() {
     `)
 
     let isFound = false
-
     try {
-      await this.driver.click(defaultId)
+      const element = await this.driver.findElement(defaultId)
+      await element.click()
       isFound = true
     } catch (e) {
-      await this.driver.click(nextId)
+      const element = await this.driver.findElement(nextId)
+      await element.click()
       isFound = true
     }
 
