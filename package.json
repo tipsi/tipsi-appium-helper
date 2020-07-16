@@ -61,7 +61,7 @@
     "commander": "2.15.1",
     "glob": "7.1.2",
     "imgur": "0.2.1",
-    "lodash": "4.17.14",
+    "lodash": "4.17.19",
     "mock-require": "3.0.2",
     "node-simctl": "5.0.2",
     "require-dir-all": "0.4.15",
